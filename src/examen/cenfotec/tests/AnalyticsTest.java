@@ -46,6 +46,18 @@ public class AnalyticsTest {
 	
 	@Test
 	public void masLargoTest() {
+		String a = "casa casita casota";
+		List<String> b =  Arrays.asList("casita", "casota");
+		
+		String[] result = Analytics.masLarga(a);
+		
+		List<String> result2 = Arrays.asList(result[0], result[1]);
+		
+		assertEquals(result2, b, "Result should be an array of String that has length of 2");
+	}
+	
+	@Test
+	public void masLargoAlfabeticoTest() {
 		String a = "casa casota casita";
 		List<String> b =  Arrays.asList("casita", "casota");
 		
