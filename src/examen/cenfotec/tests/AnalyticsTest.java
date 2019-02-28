@@ -2,9 +2,10 @@ package examen.cenfotec.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import java.util.List;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
 
 import examen.cenfotec.logic.Analytics;
 
@@ -43,5 +44,15 @@ public class AnalyticsTest {
 		assertEquals(2, result, "Result should be 2 as int");
 	}
 	
-	
+	@Test
+	public void masLargoTest() {
+		String a = "casa casita casota";
+		List<String> b =  Arrays.asList("casita", "casota");
+		
+		String[] result = Analytics.masLarga(a);
+		
+		List<String> result2 = Arrays.asList(result[0], result[1]);
+		
+		assertEquals(result2, b, "Result should be an array of length 2");
+	}
 }

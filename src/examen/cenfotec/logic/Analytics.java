@@ -41,5 +41,16 @@ public class Analytics {
 
 	}
 
-
+	public static String[] masLarga(String word) {
+		int counter = 0;
+		String[] result = new String[repetitions(max(word), word)];
+		String[] splits = word.split(" ");
+		for(int i = 0; i < splits.length; i++) {
+			if(splits[i].length() == max(word)) {
+				result[counter] = splits[i];
+				counter++;
+			}
+		}
+		return result;
+	}
 }
