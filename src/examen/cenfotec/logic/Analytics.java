@@ -53,4 +53,17 @@ public class Analytics {
 		}
 		return result;
 	}
+	
+	public static String[] masCorta(String word) {
+		int counter = 0;
+		String[] result = new String[repetitions(min(word), word)];
+		String[] splits = word.split(" ");
+		for(int i = 0; i < splits.length; i++) {
+			if(splits[i].length() == min(word)) {
+				result[counter] = splits[i];
+				counter++;
+			}
+		}
+		return result;
+	}
 }
