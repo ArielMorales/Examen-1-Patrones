@@ -1,5 +1,10 @@
 package examen.cenfotec.logic;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Analytics {
 
 	public Analytics() {
@@ -51,6 +56,15 @@ public class Analytics {
 				counter++;
 			}
 		}
+		
+		List<String> listResult = new ArrayList<String>();
+		
+		listResult = Arrays.asList(result);
+		
+		Collections.sort(listResult);
+		
+		listResult.toArray(result);
+		
 		return result;
 	}
 	

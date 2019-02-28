@@ -46,7 +46,7 @@ public class AnalyticsTest {
 	
 	@Test
 	public void masLargoTest() {
-		String a = "casa casita casota";
+		String a = "casa casota casita";
 		List<String> b =  Arrays.asList("casita", "casota");
 		
 		String[] result = Analytics.masLarga(a);
