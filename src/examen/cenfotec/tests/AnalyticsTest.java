@@ -53,6 +53,18 @@ public class AnalyticsTest {
 		
 		List<String> result2 = Arrays.asList(result[0], result[1]);
 		
-		assertEquals(result2, b, "Result should be an array of length 2");
+		assertEquals(result2, b, "Result should be an array of String that has length of 2");
+	}
+	
+	@Test
+	public void masCortoTest() {
+		String a = "casa casita casota polo hola";
+		List<String> b =  Arrays.asList("casa", "polo", "hola");
+		
+		String[] result = Analytics.masCorta(a);
+		
+		List<String> result2 = Arrays.asList(result[0], result[1], result[2]);
+		
+		assertEquals(result2, b, "Result should be an array of String that has length of 3");
 	}
 }
