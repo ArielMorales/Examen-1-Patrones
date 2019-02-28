@@ -37,8 +37,8 @@ public class Analytics {
 	public static int repetitions(int k, String word) {
 		int quantity = 0;
 		String[] splits = word.split(" ");
-		for(int i = 0; i < splits.length; i++) {
-			if(splits[i].length() == k) {
+		for (int i = 0; i < splits.length; i++) {
+			if (splits[i].length() == k) {
 				quantity += 1;
 			}
 		}
@@ -50,34 +50,42 @@ public class Analytics {
 		int counter = 0;
 		String[] result = new String[repetitions(max(word), word)];
 		String[] splits = word.split(" ");
-		for(int i = 0; i < splits.length; i++) {
-			if(splits[i].length() == max(word)) {
+		for (int i = 0; i < splits.length; i++) {
+			if (splits[i].length() == max(word)) {
+				result[counter] = splits[i];
+				counter++;
+			}
+		}
+
+		List<String> listResult = new ArrayList<String>();
+
+		listResult = Arrays.asList(result);
+
+		Collections.sort(listResult);
+
+		listResult.toArray(result);
+
+		return result;
+	}
+
+	public static String[] masCorta(String word) {
+		int counter = 0;
+		String[] result = new String[repetitions(min(word), word)];
+		String[] splits = word.split(" ");
+		for (int i = 0; i < splits.length; i++) {
+			if (splits[i].length() == min(word)) {
 				result[counter] = splits[i];
 				counter++;
 			}
 		}
 		
 		List<String> listResult = new ArrayList<String>();
-		
+
 		listResult = Arrays.asList(result);
-		
+
 		Collections.sort(listResult);
-		
+
 		listResult.toArray(result);
-		
-		return result;
-	}
-	
-	public static String[] masCorta(String word) {
-		int counter = 0;
-		String[] result = new String[repetitions(min(word), word)];
-		String[] splits = word.split(" ");
-		for(int i = 0; i < splits.length; i++) {
-			if(splits[i].length() == min(word)) {
-				result[counter] = splits[i];
-				counter++;
-			}
-		}
 		return result;
 	}
 }

@@ -58,7 +58,7 @@ public class AnalyticsTest {
 	
 	@Test
 	public void masLargoAlfabeticoTest() {
-		String a = "casa casota casita";
+		String a = "casa casita casota";
 		List<String> b =  Arrays.asList("casita", "casota");
 		
 		String[] result = Analytics.masLarga(a);
@@ -70,8 +70,20 @@ public class AnalyticsTest {
 	
 	@Test
 	public void masCortoTest() {
+		String a = "casa casita casota hola polo";
+		List<String> b =  Arrays.asList("casa", "hola", "polo");
+		
+		String[] result = Analytics.masCorta(a);
+		
+		List<String> result2 = Arrays.asList(result[0], result[1], result[2]);
+		
+		assertEquals(result2, b, "Result should be an array of String that has length of 3");
+	}
+	
+	@Test
+	public void masCortoAlfabeticoTest() {
 		String a = "casa casita casota polo hola";
-		List<String> b =  Arrays.asList("casa", "polo", "hola");
+		List<String> b =  Arrays.asList("casa", "hola", "polo");
 		
 		String[] result = Analytics.masCorta(a);
 		
