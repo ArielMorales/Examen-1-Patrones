@@ -88,4 +88,16 @@ public class Analytics {
 		listResult.toArray(result);
 		return result;
 	}
+
+	public static String primeroMasLarga(String word) {
+		String result = "";
+		String[] splits = word.split(" ");
+		for (int i = 0; i < splits.length; i++) {
+			if (splits[i].length() == max(word)) {
+				result = splits[i];
+				break;
+			}
+		}
+		return result;
+	}
 }

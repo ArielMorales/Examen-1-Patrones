@@ -91,4 +91,15 @@ public class AnalyticsTest {
 		
 		assertEquals(result2, b, "Result should be an array of String that has length of 3");
 	}
+	
+	@Test
+	public void primerMasLargoTest() {
+		String a = "casa casita casota polo hola";
+		String b = "casita";
+		
+		String result = Analytics.primeroMasLarga(a);
+		
+		assertEquals(b, result, "Result should casita ");
+	}
+	
 }
